@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>MakersBnB - Welcome</title>
+</head>
+
+<body>
+
+<h1>Hi Molly! Welcome to MakersBnB Rewind!</h1>
+
+    <h3 th:text="${nSpaces} + ' spaces are waiting to be discovered'"></h3>
+
+<p th:text="${nBookings} + ' bookings were made last week'"></p>
+
+<a href="/spaces">See available spaces</a>
+
+<h3>Recent reviews</h3>
+<ul>
+    <!-- using th:each we tell Thymeleaf to render an li for each review -->
+    <li th:each="review : ${reviews}" th:text="${review}"></li>
+</ul>
+<a href="/spaces/new">List a space!</a>
+<br>
+<br>
+<a href="/contactus">Contact us here</a>
+<br>
+<br>
+<a href="/team">View the team</a>
+</body>
+
+</html>

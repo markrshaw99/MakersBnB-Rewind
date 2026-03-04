@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>MakersBnB - Spaces</title>
+</head>
+
+<body>
+    <header>
+        <h1>Available Spaces</h1>
+    </header>
+    <div th:each="space : ${spaces}">
+        <h2 th:text="${space.name}"></h2>
+        <p th:text="${space.description}"></p>
+        <p th:text="'£' + ${#numbers.formatDecimal(space.price, 1, 2)} + ' per night'"></p>
+    </div>
+
+    <a href="/">Go to homepage</a>
+
+</body>
+
+</html>
